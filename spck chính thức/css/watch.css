@@ -1,0 +1,97 @@
+.watch-info {
+  margin: 2rem 0 1.5rem 0;
+  background: #23252b;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px #0003;
+  padding: 1.5rem 2rem;
+}
+.watch-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.watch-title h1 {
+  font-size: 2rem;
+  color: #ff4d4d;
+  margin: 0;
+  font-weight: 800;
+}
+.watch-score {
+  background: #ff4d4d;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.3rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.watch-meta {
+  margin-top: 1rem;
+  color: #eee;
+  font-size: 1.05rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.video-player {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+.fake-player {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0004;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fake-screen {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 0.7;
+}
+.episodes-list {
+  margin: 2.5rem 0 1.5rem 0;
+  background: #23252b;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px #0002;
+  padding: 1.5rem 2rem;
+}
+.episodes-list h2 {
+  color: #ff4d4d;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.episodes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.episode-item {
+  background: #23252b;
+  color: #fff;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #ff4d4d33;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  margin-bottom: 0.3rem;
+}
+.episode-item:hover, .episode-item.active {
+  background: #ff4d4d;
+  color: #fff;
+  border: 1px solid #ff4d4d;
+  box-shadow: 0 2px 8px #ff4d4d33;
+}
+@media (max-width: 900px) {
+  .watch-info, .episodes-list { padding: 1rem; }
+  .fake-player { max-width: 100%; }
+}

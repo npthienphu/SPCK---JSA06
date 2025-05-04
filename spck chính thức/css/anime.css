@@ -1,0 +1,193 @@
+body {
+  background: #181a20;
+  color: #fff;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.anime-detail {
+  margin: 2.5rem 0 1.5rem 0;
+  background: #23252b;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px #0003;
+  padding: 2rem;
+}
+
+.anime-info-flex {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.anime-cover {
+  width: 220px;
+  min-width: 160px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px #0006;
+  background: #181a20;
+  object-fit: cover;
+}
+
+.anime-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.anime-info h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.1rem;
+  color: #ff4d4d;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.anime-meta {
+  margin-bottom: 1.1rem;
+  color: #eee;
+  font-size: 1.05rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.anime-meta span {
+  background: #23252b;
+  border-radius: 6px;
+  padding: 0.2rem 0.8rem;
+  color: #ffbaba;
+  font-weight: 500;
+}
+
+.anime-genres {
+  margin-bottom: 1.1rem;
+}
+
+.genre {
+  display: inline-block;
+  background: #ff4d4d;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.2rem 0.7rem;
+  margin-right: 0.5rem;
+  font-size: 0.97rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #0002;
+  margin-bottom: 0.3rem;
+}
+
+.anime-desc {
+  margin-bottom: 1.5rem;
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 1.08rem;
+  background: #23252b;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.watch-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff4d4d 60%, #e63e3e 100%);
+  color: #fff;
+  padding: 0.8rem 2.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.13rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 0.5rem;
+}
+.watch-btn:hover {
+  background: linear-gradient(90deg, #e63e3e 60%, #ff4d4d 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.episodes-list {
+  margin: 2.5rem 0 1.5rem 0;
+  background: #23252b;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px #0002;
+  padding: 1.5rem 2rem;
+}
+
+.episodes-list h2 {
+  color: #ff4d4d;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.episodes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.episode-item {
+  background: #23252b;
+  color: #fff;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #ff4d4d33;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  margin-bottom: 0.3rem;
+}
+.episode-item:hover {
+  background: #ff4d4d;
+  color: #fff;
+  border: 1px solid #ff4d4d;
+  box-shadow: 0 2px 8px #ff4d4d33;
+}
+
+@media (max-width: 900px) {
+  .anime-info-flex { flex-direction: column; align-items: center; }
+  .anime-cover { width: 100%; max-width: 320px; }
+  .anime-info { width: 100%; }
+  .anime-detail, .episodes-list { padding: 1rem; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+}
+header {
+  background: #23252b;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px #0002;
+}
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff4d4d;
+  text-decoration: none;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a.active, nav a:hover {
+  color: #ff4d4d;
+}
+footer {
+  background: #23252b;
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: #aaa;
+  margin-top: 2rem;
+}
