@@ -1,0 +1,176 @@
+.schedule-page {
+  padding: 2rem;
+  min-height: calc(100vh - 60px - 300px);
+}
+
+.schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--light-text);
+}
+
+.schedule-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.schedule-tab {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--dark-light-bg);
+  color: var(--light-text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.schedule-tab:hover {
+  background: var(--primary);
+}
+
+.schedule-tab.active {
+  background: var(--primary);
+}
+
+.schedule-content {
+  position: relative;
+}
+
+.schedule-day {
+  display: none;
+}
+
+.schedule-day.active {
+  display: block;
+}
+
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.schedule-anime-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--dark-light-bg);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.schedule-anime-card:hover {
+  transform: translateY(-5px);
+}
+
+.schedule-anime-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.schedule-anime-card-info {
+  padding: 1rem;
+}
+
+.schedule-anime-card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.schedule-anime-card-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--gray-text);
+  font-size: 0.9rem;
+}
+
+.schedule-anime-card-meta i {
+  margin-right: 0.3rem;
+}
+
+.loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--dark-light-bg) 25%,
+    var(--dark-bg) 50%,
+    var(--dark-light-bg) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.error-message {
+  text-align: center;
+  color: var(--error);
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .schedule-page {
+    padding: 1rem;
+  }
+
+  .schedule-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .schedule-tabs {
+    gap: 0.5rem;
+  }
+
+  .schedule-tab {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .anime-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .schedule-anime-card img {
+    height: 225px;
+  }
+
+  .schedule-anime-card-info {
+    padding: 0.8rem;
+  }
+
+  .schedule-anime-card-title {
+    font-size: 0.9rem;
+  }
+
+  .schedule-anime-card-meta {
+    font-size: 0.8rem;
+  }
+} 

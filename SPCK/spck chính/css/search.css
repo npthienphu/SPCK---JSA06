@@ -1,166 +1,210 @@
-main {
-    display: flex;
-    padding: 0 20px;
-    gap: 32px;
-    margin: 112px auto 0 auto;
-    max-width: 1200px;
+.search-page {
+  padding: 2rem;
+  min-height: calc(100vh - 60px - 300px);
+}
+
+.search-container {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.search-box {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid var(--dark-light-bg);
+  border-radius: 8px;
+  background: var(--dark-bg);
+  color: var(--light-text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.search-box button {
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background: var(--primary-dark);
+}
+
+.search-filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-filters select {
+  padding: 0.8rem;
+  border: 2px solid var(--dark-light-bg);
+  border-radius: 8px;
+  background: var(--dark-bg);
+  color: var(--light-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.search-filters select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.search-results {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.anime-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--dark-light-bg);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.anime-card:hover {
+  transform: translateY(-5px);
+}
+
+.anime-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.anime-card-info {
+  padding: 1rem;
+}
+
+.anime-card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.anime-card-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--gray-text);
+  font-size: 0.9rem;
+}
+
+.anime-card-meta i {
+  margin-right: 0.3rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--dark-light-bg);
+  color: var(--light-text);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: var(--primary);
+}
+
+.pagination button.active {
+  background: var(--primary);
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--dark-light-bg) 25%,
+    var(--dark-bg) 50%,
+    var(--dark-light-bg) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
   }
-  
-  .iframe-container {
-    position: relative;
-    height: 0;
-    width: 100%;
-    padding-bottom: 56.25%;
+  100% {
+    background-position: -200% 0;
   }
-  .iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+}
+
+.error-message {
+  text-align: center;
+  color: var(--error);
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .search-page {
+    padding: 1rem;
   }
-  
-  .movie-info {
-    margin: 40px 0;
-    display: flex;
+
+  .search-box {
     flex-direction: column;
-    align-items: start;
-    gap: 16px;
   }
-  
-  #movie-title {
-    font-size: 24px;
-    line-height: 32px;
-    transition: 0.3s;
+
+  .search-box button {
+    padding: 1rem;
   }
-  
-  #similar {
-    flex-shrink: 0;
-    width: 320px;
-    display: flex;
+
+  .search-filters {
     flex-direction: column;
-    gap: 16px;
-    overflow-y: auto;
-    max-height: 100vh;
   }
-  
-  #similar > a > div {
-    display: flex;
-    gap: 16px;
-    padding-right: 20px;
-    cursor: pointer;
+
+  .anime-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
   }
-  
-  #similar > a > div img {
-    width: 80px;
-    height: 120px;
-    object-fit: cover;
-    transition: 0.3s;
+
+  .anime-card img {
+    height: 225px;
   }
-  
-  #similar > a > div > div {
-    padding: 12px 0;
-    transition: 0.3s;
-  }
-  
-  #similar > a > div:hover img {
-    filter: brightness(75%);
-  }
-  
-  #similar > a > div:hover div {
-    color: var(--orange);
-  }
-  
-  .comment-form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .comment-form img {
-    width: 35px;
-    height: 35px;
-    border-radius: 9999px;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-  
-  .comment-form > div {
-    flex-grow: 1;
-    position: relative;
-  }
-  
-  .comment-form input {
-    outline: none;
-    border: none;
-    border-radius: 9999px;
-    background: var(--dark-lighten);
-    color: white;
-    width: 100%;
-    height: 40px;
-    padding: 0 20px;
-    font-size: 15px;
-  }
-  
-  .comment-form input::placeholder {
-    color: #9da1ab;
-  }
-  
-  .comment-form button {
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: none;
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 16px;
-  }
-  
-  #comments {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 15px 0;
-  }
-  
-  .comment-item {
-    display: flex;
-    align-items: start;
-    gap: 10px;
-  }
-  
-  .comment-item > img {
-    width: 35px;
-    height: 35px;
-    border-radius: 9999px;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-  
-  .comment-item > div > div {
-    border-radius: 18px;
-    background: var(--dark-lighten);
-    padding: 12px;
-  }
-  
-  .comment-item > div > p {
-    color: #9da1ab;
-    margin-top: 5px;
-    margin-left: 10px;
-    font-size: 14px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    main {
-      flex-direction: column;
-    }
-  
-    #similar {
-      width: auto;
-      max-height: none;
-    }
-  }
-  
+} 

@@ -237,32 +237,20 @@ export const ANIMATION_DURATIONS = {
   SLIDE_OUT: 400,
 };
 
-// Authentication Configuration
-export const AUTH_CONFIG = {
-  API_URL: 'https://api.example.com/auth', // Replace with your actual auth API
-  TOKEN_KEY: 'auth_token',
-  USER_KEY: 'currentUser',
-  REFRESH_TOKEN_KEY: 'refresh_token',
-  TOKEN_EXPIRY: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
-};
-
 // Error Messages
 export const ERROR_MESSAGES = {
-  LOGIN_FAILED: 'Failed to sign in. Please check your credentials and try again.',
-  REGISTER_FAILED: 'Failed to create account. Please try again.',
-  PASSWORD_MISMATCH: 'Passwords do not match. Please try again.',
-  SOCIAL_AUTH_FAILED: 'Social authentication failed. Please try again.',
-  INVALID_EMAIL: 'Please enter a valid email address.',
-  INVALID_PASSWORD: 'Password must be at least 8 characters long.',
-  INVALID_USERNAME: 'Username must be at least 3 characters long.',
-  NETWORK_ERROR: 'Network error. Please check your connection and try again.',
+  API_ERROR: 'Failed to fetch data from the server. Please try again later.',
+  NETWORK_ERROR: 'Network error. Please check your internet connection.',
+  NOT_FOUND: 'The requested content could not be found.',
+  UNAUTHORIZED: 'You need to be logged in to access this feature.',
+  RATE_LIMIT: 'Too many requests. Please wait a moment and try again.',
 };
 
 // Success Messages
 export const SUCCESS_MESSAGES = {
-  LOGIN_SUCCESS: 'Successfully signed in!',
-  REGISTER_SUCCESS: 'Account created successfully!',
-  LOGOUT_SUCCESS: 'Successfully signed out!',
+  FAVORITE_ADDED: 'Added to favorites successfully.',
+  FAVORITE_REMOVED: 'Removed from favorites successfully.',
+  SETTINGS_SAVED: 'Settings saved successfully.',
 };
 
 // Loading States
@@ -271,6 +259,13 @@ export const LOADING_STATES = {
   LOADING: 'loading',
   SUCCESS: 'success',
   ERROR: 'error',
+};
+
+// User Authentication
+export const AUTH_CONFIG = {
+  LOGIN_URL: './login.html',
+  LOGOUT_URL: './index.html',
+  AVATAR_API: 'https://api.dicebear.com/7.x/initials/svg',
 };
 
 // Chatbot Configuration

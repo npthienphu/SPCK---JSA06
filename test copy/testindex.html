@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Vietsub Fan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #111; color: #fff; }
+        header, footer { background-color: #222; padding: 20px; text-align: center; }
+        nav { background-color: #333; display: flex; justify-content: center; gap: 20px; padding: 10px; }
+        nav a { color: #fff; text-decoration: none; }
+        nav a:hover { color: #f00; }
+        #search-bar { display: block; margin: 20px auto; padding: 10px; width: 60%; border-radius: 5px; border: none; }
+        .anime-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 20px; }
+        .anime-card { background-color: #222; border-radius: 10px; overflow: hidden; transition: transform 0.3s; cursor: pointer; }
+        .anime-card:hover { transform: scale(1.05); }
+        .anime-card img { width: 100%; height: 250px; object-fit: cover; }
+        .anime-card h3, .anime-card p { margin: 10px; }
+        .video-player { width: 80%; margin: 20px auto; background-color: #000; padding: 10px; border-radius: 10px; }
+        .server-list, .episode-list, .genre-list, .comment-section { width: 80%; margin: 10px auto; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .server-list button, .episode-list button, .genre-list button { padding: 10px 15px; border: none; border-radius: 5px; background-color: #333; color: #fff; cursor: pointer; }
+        .server-list button:hover, .episode-list button:hover, .genre-list button:hover { background-color: #f00; }
+        .comment-section { flex-direction: column; }
+        .comment-section textarea { width: 100%; height: 80px; padding: 10px; border-radius: 5px; border: none; margin-bottom: 10px; }
+        .comment-section button { align-self: flex-end; }
+        #comment-list p { background-color: #333; padding: 10px; border-radius: 5px; margin: 5px 0; }
+        .scroll-to-top { position: fixed; bottom: 30px; right: 30px; background-color: #f00; color: #fff; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; display: none; align-items: center; justify-content: center; }
+    </style>
+   <link rel="stylesheet" href="./css/main.css" />
+   <link rel="stylesheet" href="./css/auth.css" />
+   <link rel="stylesheet" href="login.html" />
+   <link rel="stylesheet" href="register.html" />
+</head>
+<body>
+    <header>
+        <h1>Anime Vietsub Fan</h1>
+    </header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./index.html">
+                <span>Anime<span style="color: var(--primary)">Hub</span></span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html" class="active">Home</a>
+            <a href="./popular.html">Popular</a>
+            <a href="./genres.html">Genres</a>
+            <a href="./schedule.html">Schedule</a>
+        </div>
+        <div class="nav-actions">
+            <a href="./search.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <div id="avatar-action-container">
+                <a href="./login.html" class="btn secondary-btn">Sign In</a>
+                <a href="./register.html" class="btn primary-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+    <input type="text" id="search-bar" placeholder="Tìm kiếm anime..." onkeyup="filterAnime()">
+    <section class="anime-grid" id="anime-container">
+        <div class="anime-card" data-title="Naruto" onclick="showPlayer('Naruto')">
+            <img src="https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg" alt="Naruto">
+            <h3>Naruto</h3>
+            <p>Ninja huyền thoại trên hành trình trở thành Hokage.</p>
+        </div>
+        <div class="anime-card" data-title="Attack on Titan" onclick="showPlayer('Attack on Titan')">
+            <img src="https://upload.wikimedia.org/wikipedia/en/5/5d/Attack_on_Titan_cover.jpg" alt="Attack on Titan">
+            <h3>Attack on Titan</h3>
+            <p>Cuộc chiến sinh tồn của nhân loại trước Titan.</p>
+        </div>
+        <div class="anime-card" data-title="One Piece" onclick="showPlayer('One Piece')">
+            <img src="https://upload.wikimedia.org/wikipedia/en/1/17/OnePieceVol1Cover.jpg" alt="One Piece">
+            <h3>One Piece</h3>
+            <p>Cuộc phiêu lưu của băng hải tặc Mũ Rơm tìm kho báu.</p>
+        </div>
+    </section>
+
+    <section id="player-section" style="display:none;">
+        <div class="video-player">
+            <video id="anime-video" width="100%" controls>
+                <source src="" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </div>
+        <div class="server-list">
+            <button onclick="changeServer('server1')">Server 1</button>
+            <button onclick="changeServer('server2')">Server 2</button>
+        </div>
+        <div class="episode-list">
+            <button onclick="changeEpisode(1)">Tập 1</button>
+            <button onclick="changeEpisode(2)">Tập 2</button>
+            <button onclick="changeEpisode(3)">Tập 3</button>
+        </div>
+        <div class="genre-list">
+            <button>Hành động</button>
+            <button>Phiêu lưu</button>
+            <button>Hài hước</button>
+            <button>Tình cảm</button>
+        </div>
+        <div class="comment-section">
+            <h3>Bình luận</h3>
+            <textarea placeholder="Viết bình luận..."></textarea>
+            <button onclick="submitComment()">Gửi</button>
+            <div id="comment-list"></div>
+        </div>
+    </section>
+
+    <button class="scroll-to-top" id="scrollToTopBtn" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <footer>
+        &copy; 2025 Anime Vietsub Fan | Liên hệ: <a href="mailto:contact@animevietsub.vn">contact@animevietsub.vn</a>
+    </footer>
+
+    <script type="module" src="./js/config.js"></script>
+    <script type="module" src="./js/auth.js"></script>
+    <script type="module">
+        import { AUTH_CONFIG } from './js/config.js';
+
+        const avatarContainer = document.getElementById('avatar-action-container');
+        const user = JSON.parse(localStorage.getItem(AUTH_CONFIG.USER_KEY));
+
+        if (user) {
+            avatarContainer.innerHTML = `
+                <img src="${user.avatar}" alt="Avatar" style="width:32px;height:32px;border-radius:50%;vertical-align:middle;">
+                <span style="color:var(--light-text);margin-left:8px;">${user.username}</span>
+                <button id="logout-btn" style="margin-left:12px;" class="btn secondary-btn">Logout</button>
+            `;
+            document.getElementById('logout-btn').onclick = () => {
+                localStorage.removeItem(AUTH_CONFIG.USER_KEY);
+                window.location.reload();
+            };
+        } else {
+            avatarContainer.innerHTML = `
+                <a href="./login.html" class="btn secondary-btn">Sign In</a>
+                <a href="./register.html" class="btn primary-btn">Sign Up</a>
+            `;
+        }
+    </script>
+    <script>
+        let currentAnime = '';
+
+        function filterAnime() {
+            const input = document.getElementById('search-bar').value.toLowerCase();
+            const cards = document.querySelectorAll('.anime-card');
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                card.style.display = title.includes(input) ? '' : 'none';
+            });
+        }
+
+        function showPlayer(anime) {
+            currentAnime = anime;
+            document.getElementById('player-section').style.display = 'block';
+            document.getElementById('anime-video').src = `videos/${anime.toLowerCase().replace(/ /g, '_')}_ep1.mp4`;
+        }
+
+        function changeServer(server) {
+            alert(`Đổi sang ${server} (giả lập)`);
+        }
+
+        function changeEpisode(ep) {
+            if (currentAnime) {
+                document.getElementById('anime-video').src = `videos/${currentAnime.toLowerCase().replace(/ /g, '_')}_ep${ep}.mp4`;
+            }
+        }
+
+        function submitComment() {
+            const textarea = document.querySelector('.comment-section textarea');
+            const commentList = document.getElementById('comment-list');
+            const comment = document.createElement('p');
+            if (textarea.value.trim()) {
+                comment.textContent = textarea.value;
+                commentList.appendChild(comment);
+                textarea.value = '';
+            } else {
+                alert('Vui lòng nhập nội dung bình luận!');
+            }
+        }
+
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'flex';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

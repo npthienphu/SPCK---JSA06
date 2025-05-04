@@ -1,0 +1,88 @@
+.genres-page {
+  padding-top: 6rem;
+  min-height: 100vh;
+}
+
+.genres-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.genres-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--light);
+}
+
+.genres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.genre-card {
+  position: relative;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.genre-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.genre-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: filter 0.3s;
+}
+
+.genre-card:hover img {
+  filter: brightness(0.5);
+}
+
+.genre-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: var(--light);
+}
+
+.genre-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.genre-card-count {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+@media (max-width: 768px) {
+  .genres-container h1 {
+    font-size: 2rem;
+  }
+  
+  .genres-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .genre-card {
+    height: 120px;
+  }
+  
+  .genre-card-title {
+    font-size: 1rem;
+  }
+} 

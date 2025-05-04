@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule - AnimeHub</title>
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/schedule.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="./index.html">
+          <span>Anime<span style="color: var(--primary)">Hub</span></span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./popular.html">Popular</a>
+        <a href="./genres.html">Genres</a>
+        <a href="./schedule.html" class="active">Schedule</a>
+      </div>
+      <div class="nav-actions">
+        <a href="./search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <div id="avatar-action-container"></div>
+      </div>
+    </nav>
+
+    <main class="schedule-page">
+      <div class="schedule-container">
+        <h1>Weekly Schedule</h1>
+        <div class="schedule-tabs">
+          <button class="schedule-tab active" data-day="monday">Monday</button>
+          <button class="schedule-tab" data-day="tuesday">Tuesday</button>
+          <button class="schedule-tab" data-day="wednesday">Wednesday</button>
+          <button class="schedule-tab" data-day="thursday">Thursday</button>
+          <button class="schedule-tab" data-day="friday">Friday</button>
+          <button class="schedule-tab" data-day="saturday">Saturday</button>
+          <button class="schedule-tab" data-day="sunday">Sunday</button>
+        </div>
+        <div class="schedule-content">
+          <div class="schedule-day active" id="monday">
+            <div class="anime-grid"></div>
+          </div>
+          <div class="schedule-day" id="tuesday">
+            <div class="anime-grid"></div>
+          </div>
+          <div class="schedule-day" id="wednesday">
+            <div class="anime-grid"></div>
+          </div>
+          <div class="schedule-day" id="thursday">
+            <div class="anime-grid"></div>
+          </div>
+          <div class="schedule-day" id="friday">
+            <div class="anime-grid"></div>
+          </div>
+          <div class="schedule-day" id="saturday">
+            <div class="anime-grid"></div>
+          </div>
+          <div class="schedule-day" id="sunday">
+            <div class="anime-grid"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AnimeHub</h3>
+          <p>Your ultimate destination for anime streaming and discovery.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="./about.html">About Us</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./terms.html">Terms of Service</a>
+          <a href="./privacy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 AnimeHub. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/config.js"></script>
+    <script type="module" src="./js/schedule.js"></script>
+  </body>
+</html> 
