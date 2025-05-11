@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thể loại - AnimeHub</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/genres.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <a href="../index.html" class="logo">AnimeHub</a>
+            <nav>
+                <a href="../index.html">Trang chủ</a>
+                <a href="genres.html" class="active">Thể loại</a>
+                <a href="search.html">Tìm kiếm</a>
+                <a href="login.html">Đăng nhập</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="genres-header">
+                <h1>Thể loại anime</h1>
+                <div class="genres-search">
+                    <input type="text" id="genreSearch" placeholder="Tìm thể loại...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="genres-grid">
+                <!-- Hành động -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=action">
+                        <div class="genre-icon">
+                            <i class="fas fa-fist-raised"></i>
+                        </div>
+                        <h3>Hành động</h3>
+                        <span class="anime-count">120 anime</span>
+                    </a>
+                </div>
+
+                <!-- Phiêu lưu -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=adventure">
+                        <div class="genre-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h3>Phiêu lưu</h3>
+                        <span class="anime-count">85 anime</span>
+                    </a>
+                </div>
+
+                <!-- Hài hước -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=comedy">
+                        <div class="genre-icon">
+                            <i class="fas fa-face-laugh"></i>
+                        </div>
+                        <h3>Hài hước</h3>
+                        <span class="anime-count">95 anime</span>
+                    </a>
+                </div>
+
+                <!-- Drama -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=drama">
+                        <div class="genre-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h3>Drama</h3>
+                        <span class="anime-count">75 anime</span>
+                    </a>
+                </div>
+
+                <!-- Fantasy -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=fantasy">
+                        <div class="genre-icon">
+                            <i class="fas fa-wand-sparkles"></i>
+                        </div>
+                        <h3>Fantasy</h3>
+                        <span class="anime-count">110 anime</span>
+                    </a>
+                </div>
+
+                <!-- Lãng mạn -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=romance">
+                        <div class="genre-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Lãng mạn</h3>
+                        <span class="anime-count">65 anime</span>
+                    </a>
+                </div>
+
+                <!-- Khoa học viễn tưởng -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=sci-fi">
+                        <div class="genre-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Khoa học viễn tưởng</h3>
+                        <span class="anime-count">45 anime</span>
+                    </a>
+                </div>
+
+                <!-- Siêu nhiên -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=supernatural">
+                        <div class="genre-icon">
+                            <i class="fas fa-ghost"></i>
+                        </div>
+                        <h3>Siêu nhiên</h3>
+                        <span class="anime-count">55 anime</span>
+                    </a>
+                </div>
+
+                <!-- Thể thao -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=sports">
+                        <div class="genre-icon">
+                            <i class="fas fa-basketball"></i>
+                        </div>
+                        <h3>Thể thao</h3>
+                        <span class="anime-count">40 anime</span>
+                    </a>
+                </div>
+
+                <!-- Tâm lý -->
+                <div class="genre-card">
+                    <a href="genre-detail.html?genre=psychological">
+                        <div class="genre-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Tâm lý</h3>
+                        <span class="anime-count">60 anime</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AnimeHub. Xem anime vietsub chất lượng cao miễn phí.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/genres.js"></script>
+</body>
+</html>

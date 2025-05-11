@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm - AnimeHub</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <a href="../index.html" class="logo">AnimeHub</a>
+            <nav>
+                <a href="../index.html">Trang chủ</a>
+                <a href="genres.html">Thể loại</a>
+                <a href="search.html" class="active">Tìm kiếm</a>
+                <a href="login.html">Đăng nhập</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Search Form -->
+            <div class="search-section">
+                <div class="search-form">
+                    <input type="text" id="searchInput" placeholder="Nhập tên anime cần tìm...">
+                    <button id="searchButton" class="btn btn-primary">Tìm kiếm</button>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="genreFilter">Thể loại:</label>
+                        <select id="genreFilter">
+                            <option value="">Tất cả</option>
+                            <option value="action">Hành động</option>
+                            <option value="adventure">Phiêu lưu</option>
+                            <option value="comedy">Hài hước</option>
+                            <option value="drama">Drama</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="romance">Lãng mạn</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="statusFilter">Trạng thái:</label>
+                        <select id="statusFilter">
+                            <option value="">Tất cả</option>
+                            <option value="airing">Đang phát</option>
+                            <option value="complete">Hoàn thành</option>
+                            <option value="upcoming">Sắp phát</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sortFilter">Sắp xếp:</label>
+                        <select id="sortFilter">
+                            <option value="popularity">Phổ biến</option>
+                            <option value="rating">Đánh giá</option>
+                            <option value="latest">Mới nhất</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div class="search-results">
+                <div class="results-header">
+                    <h2>Kết quả tìm kiếm</h2>
+                    <span id="resultCount">0 kết quả</span>
+                </div>
+                <div id="searchResults" class="anime-grid"></div>
+                <div class="pagination">
+                    <button id="prevPage" class="btn btn-secondary" disabled>Trang trước</button>
+                    <span id="currentPage">Trang 1</span>
+                    <button id="nextPage" class="btn btn-secondary" disabled>Trang sau</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AnimeHub. Xem anime vietsub chất lượng cao miễn phí.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/search.js"></script>
+</body>
+</html>

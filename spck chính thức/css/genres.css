@@ -1,0 +1,119 @@
+/* Genres Header */
+.genres-header {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.genres-header h1 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.genres-search {
+    position: relative;
+    width: 300px;
+}
+
+.genres-search input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.genres-search i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.genres-search input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Genres Grid */
+.genres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.genre-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.genre-card:hover {
+    transform: translateY(-5px);
+}
+
+.genre-card a {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.genre-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.genre-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.genre-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.anime-count {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .genres-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .genres-search {
+        width: 100%;
+    }
+
+    .genres-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .genres-grid {
+        grid-template-columns: 1fr;
+    }
+}
