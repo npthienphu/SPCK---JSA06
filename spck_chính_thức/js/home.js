@@ -10,7 +10,7 @@ async function loadNewAnime() {
   const data = await res.json();
   animeList.innerHTML = data.data.map(anime => `
     <div class="anime-card">
-      <a href="./anime.html?id=${anime.mal_id}">
+      <a href="./html/anime.html?id=${anime.mal_id}" title="${anime.title}">
         <img src="${anime.images.jpg.image_url}" alt="${anime.title}" />
         <div class="anime-title">${anime.title}</div>
       </a>
@@ -24,7 +24,7 @@ async function loadHotAnime() {
   const data = await res.json();
   animeHot.innerHTML = data.data.map(anime => `
     <div class="anime-card">
-      <a href="./anime.html?id=${anime.mal_id}">
+      <a href="./html/anime.html?id=${anime.mal_id}" title="${anime.title}">
         <img src="${anime.images.jpg.image_url}" alt="${anime.title}" />
         <div class="anime-title">${anime.title}</div>
       </a>
@@ -38,7 +38,7 @@ async function loadBanner() {
   const data = await res.json();
   bannerSlider.innerHTML = data.data.map(anime => `
     <div class="banner-item">
-      <a href="./anime.html?id=${anime.mal_id}">
+      <a href="./html/anime.html?id=${anime.mal_id}" title="${anime.title}">
         <img src="${anime.images.jpg.large_image_url}" alt="${anime.title}" />
         <div class="banner-title">${anime.title}</div>
       </a>
